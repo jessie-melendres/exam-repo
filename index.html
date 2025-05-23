@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentals of Database System Final Exam</title>
+  <link rel="icon" href="/assets/v4/blog.ico">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      margin-bottom: 20px;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .hero {
+      background-color:maroon;
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .main-content {
+      padding: 2rem 0;
+    }
+
+    .card {
+      overflow: hidden;
+
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      padding: 20px 0;
+      text-align: center;
+      background: #f8f9fa;
+    }
+
+    .footer a {
+      margin: 0 10px;
+      color: #333;
+    }
+
+    .modal-content {
+      text-align: center;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="hero">
+    <div class="container">
+      <h1>Fundamentals of Database System Final Exam</h1>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container main-content">
+    <h2 class="text-center">Final Examination</h2>
+    <div class="row">
+      <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
+        <div class="card">
+          <div class="embed-responsive embed-responsive-16by9">
+            <video id="rick-video" class="embed-responsive-item" loop poster="poster.png">
+              <source src="https://cdn.mtdv.me/video/rick.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="card-text">
+            <p>Please read each questions carefully. For item 40-50, please provide the right SQL statement. Good luck!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container main-content">
+    <div id="modal-container" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>To provide you with the best user experience, we use cookies on our website. By clicking continue, you
+              agree to our use of cookies as described in our Cookie Policy.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      let modalContainer = $('#modal-container');
+      let video = document.getElementById('rick-video');
+      let textElement = document.querySelector('.card-text');
+
+      if (modalContainer && video && textElement) {
+        modalContainer.modal('show');
+
+        modalContainer.on('click', function () {
+          modalContainer.modal('hide');
+          if (video.paused) {
+            video.play();
+            textElement.innerHTML = `
+                    It's a prank!
+                    <br>
+                    Please be reminded to submit your final output on Saturday.
+                    <br>`;
+            video.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
